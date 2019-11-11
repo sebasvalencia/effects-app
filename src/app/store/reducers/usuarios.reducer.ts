@@ -38,7 +38,12 @@ export function usuariosReducer(state = estadoInicial, action: fromUsuarios.usua
         ...state,
         loaded: false,
         loading: false,
-        error: action.payloadError // por ahora mandamos todo el error
+        // error: action.payloadError // por ahora mandamos todo el error
+        error: {
+          status: action.payloadError.status,
+          message: action.payloadError.message,
+          url: action.payloadError.url
+        }
       };
 
     default:
