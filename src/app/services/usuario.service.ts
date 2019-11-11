@@ -17,4 +17,11 @@ export class UsuarioService {
         map(respuesta => respuesta['data']) // mapeamos a los usuario , por el momento no necesitamos la paginacion
       );
   }
+
+  getUSerById(id: string) {
+    return this.http.get(`${this.url}/users/${id}`)
+      .pipe(
+        map(respuesta => respuesta['data']) // mapeamos a los usuario , por el momento no necesitamos la paginacion
+      );
+  }
 }

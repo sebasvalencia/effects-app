@@ -6,9 +6,11 @@ import { ActionReducerMap } from '@ngrx/store';
 
 export interface AppState {
   usuarios: reducers.UsuariosState;
+  usuario: reducers.UsuarioState;
 }
 
 // action reducer map es la combinacion de todos los reducers que usa la interface del appState
 export const appReducers: ActionReducerMap<AppState> = {
-  usuarios: reducers.usuariosReducer
+  usuarios: reducers.usuariosReducer,
+  usuario: reducers.usuarioReducer,
 };

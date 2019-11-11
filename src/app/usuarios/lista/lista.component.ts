@@ -25,6 +25,7 @@ export class ListaComponent implements OnInit {
     // seleccionar la info del store
     this.store.select('usuarios')
       .subscribe(usuarios => {
+        console.log('usuarios', usuarios);
         this.usuarios = usuarios.users;
         this.loading = usuarios.loading;
        });
