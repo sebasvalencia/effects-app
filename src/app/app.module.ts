@@ -4,8 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 // NgRx
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducers } from './store/app.reducer';
+import { effectsArray } from './store/effects';
 
 // Environment
 import { environment } from '../environments/environment';
@@ -27,6 +29,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers), // el state raiz de la app
+    EffectsModule.forRoot(effectsArray),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
